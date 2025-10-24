@@ -5,6 +5,10 @@ from datetime import datetime
 app = Flask(__name__)
 log_file = 'clicks.csv'
 
+@app.route('/')
+def home():
+    return 'Website is working'
+
 @app.route('/phish-sim')
 def log_click():
     email = request.args.get('teacher')  # Get Gmail from URL param
